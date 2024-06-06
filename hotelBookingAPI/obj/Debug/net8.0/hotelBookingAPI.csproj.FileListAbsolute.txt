@@ -103,3 +103,4 @@ C:\Users\kemer\Documents\GitHub\SE4458-API\hotelBookingAPI\obj\Debug\net8.0\refi
 C:\Users\kemer\Documents\GitHub\SE4458-API\hotelBookingAPI\obj\Debug\net8.0\hotelBookingAPI.pdb
 C:\Users\kemer\Documents\GitHub\SE4458-API\hotelBookingAPI\obj\Debug\net8.0\hotelBookingAPI.genruntimeconfig.cache
 C:\Users\kemer\Documents\GitHub\SE4458-API\hotelBookingAPI\obj\Debug\net8.0\ref\hotelBookingAPI.dll
+C:\Users\kemer\Documents\GitHub\SE4458-API\hotelBookingAPI\obj\Debug\net8.0\hotelBookingAPI.sourcelink.json
