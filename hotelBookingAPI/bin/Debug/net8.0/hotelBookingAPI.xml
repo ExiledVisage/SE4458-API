@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>hotelBookingAPI</name>
+    </assembly>
+    <members>
+        <member name="T:hotelBookingAPI.Migrations.MyDemoMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:hotelBookingAPI.Migrations.MyDemoMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:hotelBookingAPI.Migrations.MyDemoMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:hotelBookingAPI.Migrations.MyDemoMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
