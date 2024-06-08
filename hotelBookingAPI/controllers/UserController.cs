@@ -29,7 +29,8 @@ namespace WebAPI.Controllers
                 var user = new User
                 {
                     Username = userDto.Username,
-                    Email = userDto.Email
+                    Email = userDto.Email,
+                    Role = userDto.Role
                 };
 
                 var createdUser = await _userService.RegisterAsync(user, userDto.Password);
@@ -60,7 +61,7 @@ namespace WebAPI.Controllers
         }
 
         // GET: api/Users/5
-        [HttpGet("{id}")]
+        [HttpGet("get-user/{id}")]
         public async Task<IActionResult> GetById(int id)
         {
             var user = await _userService.GetUserByIdAsync(id);
@@ -71,7 +72,7 @@ namespace WebAPI.Controllers
         }
 
         // PUT: api/Users/5
-        [HttpPut("{id}")]
+        [HttpPut("update-user/{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] UserUpdateDto userDto)
         {
             if (id != userDto.Id)
@@ -96,7 +97,7 @@ namespace WebAPI.Controllers
         }
 
         // DELETE: api/Users/5
-        [HttpDelete("{id}")]
+        [HttpDelete("delete-user/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var user = await _userService.GetUserByIdAsync(id);

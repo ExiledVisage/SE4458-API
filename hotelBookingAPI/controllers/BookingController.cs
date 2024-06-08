@@ -19,7 +19,7 @@ namespace WebAPI.Controllers
             _bookingService = bookingService;
         }
 
-        [HttpGet]
+        [HttpGet("get-all-bookings")]
         public async Task<ActionResult<IEnumerable<BookingResponseDto>>> GetAllBookings()
         {
             var bookings = await _bookingService.GetAllBookingsAsync();
@@ -34,7 +34,7 @@ namespace WebAPI.Controllers
             return Ok(bookingDtos);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("get-booking/{id}")]
         public async Task<ActionResult<BookingResponseDto>> GetBookingById(int id)
         {
             var booking = await _bookingService.GetBookingByIdAsync(id);
@@ -53,7 +53,7 @@ namespace WebAPI.Controllers
             return Ok(bookingDto);
         }
 
-        [HttpPost]
+        [HttpPost("create-booking")]
         public async Task<ActionResult<BookingResponseDto>> CreateBooking([FromBody] BookingCreateDto bookingCreateDto)
         {
             var newBooking = new Booking
@@ -76,7 +76,7 @@ namespace WebAPI.Controllers
             return CreatedAtAction(nameof(GetBookingById), new { id = createdBooking.Id }, createdBookingDto);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("update-booking/{id}")]
         public async Task<IActionResult> UpdateBooking(int id, [FromBody] BookingDto bookingDto)
         {
             var bookingToUpdate = await _bookingService.GetBookingByIdAsync(id);
@@ -94,7 +94,7 @@ namespace WebAPI.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("delete-booking/{id}")]
         public async Task<IActionResult> DeleteBooking(int id)
         {
             var booking = await _bookingService.GetBookingByIdAsync(id);

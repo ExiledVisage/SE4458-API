@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using WebAPI.Data;
 using WebAPI.Services;
@@ -21,7 +22,10 @@ namespace WebAPI
             builder.Services.AddScoped<IUserService, UserService>();
 
             // Add controllers
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+            });
 
             // Configure Swagger
             builder.Services.AddEndpointsApiExplorer();

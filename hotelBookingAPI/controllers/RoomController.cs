@@ -18,7 +18,7 @@ namespace WebAPI.Controllers
             _roomService = roomService;
         }
 
-        [HttpGet]
+        [HttpGet("get-all-rooms")]
         public async Task<ActionResult<IEnumerable<RoomResponseDto>>> GetAllRooms()
         {
             var rooms = await _roomService.GetAllRoomsAsync();
@@ -32,7 +32,7 @@ namespace WebAPI.Controllers
             return Ok(roomDtos);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("get-room/{id}")]
         public async Task<ActionResult<RoomResponseDto>> GetRoomById(int id)
         {
             var room = await _roomService.GetRoomByIdAsync(id);
@@ -50,7 +50,7 @@ namespace WebAPI.Controllers
             return Ok(roomDto);
         }
 
-        [HttpPost]
+        [HttpPost("create-room")]
         public async Task<ActionResult<RoomResponseDto>> CreateRoom([FromBody] RoomDto roomDto)
         {
             var newRoom = new Room
@@ -71,7 +71,7 @@ namespace WebAPI.Controllers
             return CreatedAtAction(nameof(GetRoomById), new { id = createdRoom.Id }, createdRoomDto);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("update-room/{id}")]
         public async Task<IActionResult> UpdateRoom(int id, [FromBody] RoomDto roomDto)
         {
             var roomToUpdate = await _roomService.GetRoomByIdAsync(id);
@@ -88,7 +88,7 @@ namespace WebAPI.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("delete-room/{id}")]
         public async Task<IActionResult> DeleteRoom(int id)
         {
             var room = await _roomService.GetRoomByIdAsync(id);

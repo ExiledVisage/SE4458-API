@@ -16,5 +16,29 @@
         <member name="M:hotelBookingAPI.Migrations.MyDemoMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:hotelBookingAPI.Migrations.newUpdate">
+            <inheritdoc />
+        </member>
+        <member name="M:hotelBookingAPI.Migrations.newUpdate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:hotelBookingAPI.Migrations.newUpdate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:hotelBookingAPI.Migrations.newUpdate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:hotelBookingAPI.Migrations.NumericalEnums">
+            <inheritdoc />
+        </member>
+        <member name="M:hotelBookingAPI.Migrations.NumericalEnums.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:hotelBookingAPI.Migrations.NumericalEnums.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:hotelBookingAPI.Migrations.NumericalEnums.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
     </members>
 </doc>

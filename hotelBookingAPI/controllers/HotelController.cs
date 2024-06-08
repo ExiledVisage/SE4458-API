@@ -18,14 +18,14 @@ namespace WebAPI.Controllers
             _hotelService = hotelService;
         }
 
-        [HttpGet]
+        [HttpGet("get-all-hotels")]
         public async Task<ActionResult<IEnumerable<Hotel>>> GetAllHotels()
         {
             var hotels = await _hotelService.GetAllHotelsAsync();
             return Ok(hotels);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("get-hotel/{id}")]
         public async Task<ActionResult<Hotel>> GetHotelById(int id)
         {
             var hotel = await _hotelService.GetHotelByIdAsync(id);
@@ -36,7 +36,7 @@ namespace WebAPI.Controllers
             return Ok(hotel);
         }
 
-        [HttpPost]
+        [HttpPost("create-hotel")]
         public async Task<ActionResult<Hotel>> CreateHotel([FromBody] HotelDto hotelDto)
         {
             if (hotelDto == null)
@@ -54,7 +54,7 @@ namespace WebAPI.Controllers
             return CreatedAtAction(nameof(GetHotelById), new { id = createdHotel.Id }, createdHotel);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("update-hotel/{id}")]
         public async Task<IActionResult> UpdateHotel(int id, [FromBody] HotelDto hotelDto)
         {
             var hotelToUpdate = await _hotelService.GetHotelByIdAsync(id);
@@ -70,7 +70,7 @@ namespace WebAPI.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("delete-hotel/{id}")]
         public async Task<IActionResult> DeleteHotel(int id)
         {
             var hotel = await _hotelService.GetHotelByIdAsync(id);
