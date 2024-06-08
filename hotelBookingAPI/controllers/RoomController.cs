@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using WebAPI.Models;
 using WebAPI.Services;
 using WebAPI.DTOs;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebAPI.Controllers
 {
@@ -51,6 +52,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("create-room")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<RoomResponseDto>> CreateRoom([FromBody] RoomDto roomDto)
         {
             var newRoom = new Room
@@ -72,6 +74,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut("update-room/{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateRoom(int id, [FromBody] RoomDto roomDto)
         {
             var roomToUpdate = await _roomService.GetRoomByIdAsync(id);
@@ -89,6 +92,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpDelete("delete-room/{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteRoom(int id)
         {
             var room = await _roomService.GetRoomByIdAsync(id);
