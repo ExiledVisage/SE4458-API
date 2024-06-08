@@ -39,10 +39,9 @@ namespace WebAPI.Services
             if (await UserExistsAsync(user.Email))
                 throw new Exception("User already exists");
 
-            using var hmac = new HMACSHA512();
-            user.PasswordHash = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(password)));
-
-            _context.Users.Add(user);
+            user.Password = password;  // Store the plain text password (Not Recommended for production)
+            
+            await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
 
             return user;
@@ -55,9 +54,7 @@ namespace WebAPI.Services
             if (user == null)
                 throw new Exception("User not found");
 
-            using var hmac = new HMACSHA512();
-            var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
-            if (user.PasswordHash != Convert.ToBase64String(computedHash))
+            if (user.Password != password)  // Directly compare plain text passwords (Not Recommended)
                 throw new Exception("Password is incorrect");
 
             return user;

@@ -40,5 +40,29 @@
         <member name="M:hotelBookingAPI.Migrations.NumericalEnums.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:hotelBookingAPI.Migrations.jwtImplementation">
+            <inheritdoc />
+        </member>
+        <member name="M:hotelBookingAPI.Migrations.jwtImplementation.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:hotelBookingAPI.Migrations.jwtImplementation.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:hotelBookingAPI.Migrations.jwtImplementation.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:hotelBookingAPI.Migrations.removePasswordHashing">
+            <inheritdoc />
+        </member>
+        <member name="M:hotelBookingAPI.Migrations.removePasswordHashing.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:hotelBookingAPI.Migrations.removePasswordHashing.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:hotelBookingAPI.Migrations.removePasswordHashing.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
     </members>
 </doc>
