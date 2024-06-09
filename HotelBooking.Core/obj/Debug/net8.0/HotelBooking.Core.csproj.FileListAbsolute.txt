@@ -1,0 +1,16 @@
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Core\obj\Debug\net8.0\HotelBooking.Core.csproj.AssemblyReference.cache
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Core\obj\Debug\net8.0\HotelBooking.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Core\obj\Debug\net8.0\HotelBooking.Core.AssemblyInfoInputs.cache
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Core\obj\Debug\net8.0\HotelBooking.Core.AssemblyInfo.cs
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Core\obj\Debug\net8.0\HotelBooking.Core.csproj.CoreCompileInputs.cache
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Core\obj\Debug\net8.0\HotelBooking.Core.sourcelink.json
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Core\bin\Debug\net8.0\HotelBooking.Core.deps.json
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Core\bin\Debug\net8.0\HotelBooking.Core.dll
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Core\bin\Debug\net8.0\HotelBooking.Core.pdb
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Core\bin\Debug\net8.0\HotelBooking.Messaging.dll
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Core\bin\Debug\net8.0\HotelBooking.Messaging.pdb
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Core\obj\Debug\net8.0\HotelBoo.F9730881.Up2Date
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Core\obj\Debug\net8.0\HotelBooking.Core.dll
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Core\obj\Debug\net8.0\refint\HotelBooking.Core.dll
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Core\obj\Debug\net8.0\HotelBooking.Core.pdb
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Core\obj\Debug\net8.0\ref\HotelBooking.Core.dll

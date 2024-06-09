@@ -1112,6 +1112,44 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "HotelBooking.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "HotelBooking.Messaging": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HotelBooking.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HotelBooking.Core.dll": {}
+        }
+      },
+      "HotelBooking.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "HotelBooking.Core": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "8.0.6",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.4"
+        },
+        "compile": {
+          "bin/placeholder/HotelBooking.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HotelBooking.Infrastructure.dll": {}
+        }
+      },
+      "HotelBooking.Messaging/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/HotelBooking.Messaging.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HotelBooking.Messaging.dll": {}
+        }
       }
     }
   },
@@ -3045,10 +3083,28 @@
         "system.threading.channels.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "HotelBooking.Core/1.0.0": {
+      "type": "project",
+      "path": "../HotelBooking.Core/HotelBooking.Core.csproj",
+      "msbuildProject": "../HotelBooking.Core/HotelBooking.Core.csproj"
+    },
+    "HotelBooking.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../HotelBooking.Infrastructure/HotelBooking.Infrastructure.csproj",
+      "msbuildProject": "../HotelBooking.Infrastructure/HotelBooking.Infrastructure.csproj"
+    },
+    "HotelBooking.Messaging/1.0.0": {
+      "type": "project",
+      "path": "../HotelBooking.Messaging/HotelBooking.Messaging.csproj",
+      "msbuildProject": "../HotelBooking.Messaging/HotelBooking.Messaging.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "HotelBooking.Core >= 1.0.0",
+      "HotelBooking.Infrastructure >= 1.0.0",
+      "HotelBooking.Messaging >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.6",
       "Microsoft.AspNetCore.OpenApi >= 8.0.5",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.6",
@@ -3092,7 +3148,17 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\kemer\\Documents\\GitHub\\SE4458-API\\HotelBooking.Core\\HotelBooking.Core.csproj": {
+              "projectPath": "C:\\Users\\kemer\\Documents\\GitHub\\SE4458-API\\HotelBooking.Core\\HotelBooking.Core.csproj"
+            },
+            "C:\\Users\\kemer\\Documents\\GitHub\\SE4458-API\\HotelBooking.Infrastructure\\HotelBooking.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\kemer\\Documents\\GitHub\\SE4458-API\\HotelBooking.Infrastructure\\HotelBooking.Infrastructure.csproj"
+            },
+            "C:\\Users\\kemer\\Documents\\GitHub\\SE4458-API\\HotelBooking.Messaging\\HotelBooking.Messaging.csproj": {
+              "projectPath": "C:\\Users\\kemer\\Documents\\GitHub\\SE4458-API\\HotelBooking.Messaging\\HotelBooking.Messaging.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

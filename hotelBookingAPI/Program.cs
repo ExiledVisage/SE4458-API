@@ -3,8 +3,9 @@ using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using WebAPI.Data;
-using WebAPI.Services;
+using HotelBooking.Infrastructure.Data;
+using HotelBooking.Infrastructure.Services;
+using HotelBooking.Core.Interfaces;
 
 namespace WebAPI
 {

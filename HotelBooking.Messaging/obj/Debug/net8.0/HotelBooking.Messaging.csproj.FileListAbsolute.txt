@@ -1,0 +1,12 @@
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Messaging\bin\Debug\net8.0\HotelBooking.Messaging.deps.json
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Messaging\bin\Debug\net8.0\HotelBooking.Messaging.dll
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Messaging\bin\Debug\net8.0\HotelBooking.Messaging.pdb
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Messaging\obj\Debug\net8.0\HotelBooking.Messaging.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Messaging\obj\Debug\net8.0\HotelBooking.Messaging.AssemblyInfoInputs.cache
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Messaging\obj\Debug\net8.0\HotelBooking.Messaging.AssemblyInfo.cs
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Messaging\obj\Debug\net8.0\HotelBooking.Messaging.csproj.CoreCompileInputs.cache
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Messaging\obj\Debug\net8.0\HotelBooking.Messaging.sourcelink.json
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Messaging\obj\Debug\net8.0\HotelBooking.Messaging.dll
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Messaging\obj\Debug\net8.0\refint\HotelBooking.Messaging.dll
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Messaging\obj\Debug\net8.0\HotelBooking.Messaging.pdb
+C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Messaging\obj\Debug\net8.0\ref\HotelBooking.Messaging.dll

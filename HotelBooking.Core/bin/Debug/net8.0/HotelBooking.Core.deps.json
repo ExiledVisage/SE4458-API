@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "HotelBooking.Core/1.0.0": {
+        "dependencies": {
+          "HotelBooking.Messaging": "1.0.0"
+        },
+        "runtime": {
+          "HotelBooking.Core.dll": {}
+        }
+      },
+      "HotelBooking.Messaging/1.0.0": {
+        "runtime": {
+          "HotelBooking.Messaging.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HotelBooking.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HotelBooking.Messaging/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

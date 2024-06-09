@@ -114,3 +114,9 @@ C:\Users\kemer\Documents\GitHub\SE4458-API\hotelBookingAPI\bin\Debug\net8.0\Micr
 C:\Users\kemer\Documents\GitHub\SE4458-API\hotelBookingAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\kemer\Documents\GitHub\SE4458-API\hotelBookingAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\kemer\Documents\GitHub\SE4458-API\hotelBookingAPI\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\kemer\Documents\GitHub\SE4458-API\hotelBookingAPI\bin\Debug\net8.0\HotelBooking.Core.dll
+C:\Users\kemer\Documents\GitHub\SE4458-API\hotelBookingAPI\bin\Debug\net8.0\HotelBooking.Infrastructure.dll
+C:\Users\kemer\Documents\GitHub\SE4458-API\hotelBookingAPI\bin\Debug\net8.0\HotelBooking.Messaging.dll
+C:\Users\kemer\Documents\GitHub\SE4458-API\hotelBookingAPI\bin\Debug\net8.0\HotelBooking.Core.pdb
+C:\Users\kemer\Documents\GitHub\SE4458-API\hotelBookingAPI\bin\Debug\net8.0\HotelBooking.Infrastructure.pdb
+C:\Users\kemer\Documents\GitHub\SE4458-API\hotelBookingAPI\bin\Debug\net8.0\HotelBooking.Messaging.pdb

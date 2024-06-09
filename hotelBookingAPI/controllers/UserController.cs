@@ -1,12 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using WebAPI.Models;
-using WebAPI.Services;
-using WebAPI.DTOs;
+using HotelBooking.Core.Models;
+using HotelBooking.Infrastructure.Services;
+using HotelBooking.Core.DTOs;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using HotelBooking.Core.Interfaces;
 
 namespace WebAPI.Controllers
 {
