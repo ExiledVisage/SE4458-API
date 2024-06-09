@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using WebAPI.Models;
 using WebAPI.Services;
 using WebAPI.DTOs;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebAPI.Controllers
 {
@@ -37,6 +38,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("create-hotel")]
+        
         public async Task<ActionResult<Hotel>> CreateHotel([FromBody] HotelDto hotelDto)
         {
             if (hotelDto == null)
