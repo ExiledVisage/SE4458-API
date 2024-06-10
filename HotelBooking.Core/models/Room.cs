@@ -8,8 +8,6 @@ namespace HotelBooking.Core.Models
         public int Capacity { get; set; }
         public decimal Price { get; set; }
         public bool IsAvailable { get; set; }
-
-        // Navigation property
         public Hotel? Hotel { get; set; }
         public ICollection<Booking>? Bookings { get; set; }
     }

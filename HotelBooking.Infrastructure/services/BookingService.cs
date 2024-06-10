@@ -37,6 +37,19 @@ namespace HotelBooking.Infrastructure.Services
 
         public async Task<Booking> CreateBookingAsync(BookingCreateDto bookingDto)
         {
+    
+            var overlappingBookings = await _context.Bookings
+                .Where(b => b.RoomId == bookingDto.RoomId &&
+                            ((bookingDto.StartDate >= b.StartDate && bookingDto.StartDate <= b.EndDate) ||
+                            (bookingDto.EndDate >= b.StartDate && bookingDto.EndDate <= b.EndDate) ||
+                            (bookingDto.StartDate <= b.StartDate && bookingDto.EndDate >= b.EndDate)))
+                .ToListAsync();
+
+            if (overlappingBookings.Any())
+            {
+                throw new InvalidOperationException("The room is not available for the selected dates.");
+            }
+
             var booking = new Booking
             {
                 UserId = bookingDto.UserId,
@@ -45,7 +58,7 @@ namespace HotelBooking.Infrastructure.Services
                 EndDate = bookingDto.EndDate
             };
 
-            _context.Bookings.Add(booking);
+            await _context.Bookings.AddAsync(booking);
             await _context.SaveChangesAsync();
 
             return booking;

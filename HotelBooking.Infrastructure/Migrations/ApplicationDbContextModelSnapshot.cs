@@ -48,7 +48,7 @@ namespace HotelBooking.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Bookings");
+                    b.ToTable("bookings", (string)null);
                 });
 
             modelBuilder.Entity("HotelBooking.Core.Models.Hotel", b =>
@@ -67,7 +67,7 @@ namespace HotelBooking.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Hotels");
+                    b.ToTable("hotels", (string)null);
                 });
 
             modelBuilder.Entity("HotelBooking.Core.Models.Room", b =>
@@ -77,6 +77,9 @@ namespace HotelBooking.Infrastructure.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Capacity")
+                        .HasColumnType("integer");
 
                     b.Property<int>("HotelId")
                         .HasColumnType("integer");
@@ -94,7 +97,7 @@ namespace HotelBooking.Infrastructure.Migrations
 
                     b.HasIndex("HotelId");
 
-                    b.ToTable("Rooms");
+                    b.ToTable("rooms", (string)null);
                 });
 
             modelBuilder.Entity("HotelBooking.Core.Models.User", b =>
@@ -119,13 +122,13 @@ namespace HotelBooking.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("users", (string)null);
                 });
 
             modelBuilder.Entity("HotelBooking.Core.Models.Booking", b =>
                 {
                     b.HasOne("HotelBooking.Core.Models.Room", "Room")
-                        .WithMany()
+                        .WithMany("Bookings")
                         .HasForeignKey("RoomId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -155,6 +158,11 @@ namespace HotelBooking.Infrastructure.Migrations
             modelBuilder.Entity("HotelBooking.Core.Models.Hotel", b =>
                 {
                     b.Navigation("Rooms");
+                });
+
+            modelBuilder.Entity("HotelBooking.Core.Models.Room", b =>
+                {
+                    b.Navigation("Bookings");
                 });
 
             modelBuilder.Entity("HotelBooking.Core.Models.User", b =>

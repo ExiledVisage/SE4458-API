@@ -21,15 +21,20 @@ namespace HotelBooking.Infrastructure.Data
                 .WithOne(r => r.Hotel)
                 .HasForeignKey(r => r.HotelId);
 
-            modelBuilder.Entity<Booking>()
-                .HasOne(b => b.User)
-                .WithMany(u => u.Bookings)
-                .HasForeignKey(b => b.UserId);   
-
-            modelBuilder.Entity<Booking>()
-                .HasOne(b => b.Room)
-                .WithMany()
+            modelBuilder.Entity<Room>()
+                .HasMany(r => r.Bookings)
+                .WithOne(b => b.Room)
                 .HasForeignKey(b => b.RoomId);
+
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Bookings)
+                .WithOne(b => b.User)
+                .HasForeignKey(b => b.UserId);
+
+            modelBuilder.Entity<Hotel>().ToTable("hotels");
+            modelBuilder.Entity<Room>().ToTable("rooms");
+            modelBuilder.Entity<User>().ToTable("users");
+            modelBuilder.Entity<Booking>().ToTable("bookings");    
         }
     }
 }
