@@ -557,16 +557,8 @@
       },
       "System.Threading.Channels/6.0.0": {},
       "HotelBooking.Core/1.0.0": {
-        "dependencies": {
-          "HotelBooking.Messaging": "1.0.0"
-        },
         "runtime": {
           "HotelBooking.Core.dll": {}
-        }
-      },
-      "HotelBooking.Messaging/1.0.0": {
-        "runtime": {
-          "HotelBooking.Messaging.dll": {}
         }
       }
     }
@@ -865,11 +857,6 @@
       "hashPath": "system.threading.channels.6.0.0.nupkg.sha512"
     },
     "HotelBooking.Core/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "HotelBooking.Messaging/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

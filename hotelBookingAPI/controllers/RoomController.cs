@@ -1,11 +1,10 @@
-using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using HotelBooking.Core.Models;
-using HotelBooking.Infrastructure.Services;
 using HotelBooking.Core.DTOs;
-using Microsoft.AspNetCore.Authorization;
 using HotelBooking.Core.Interfaces;
+using HotelBooking.Core.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
@@ -53,16 +52,14 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("create-room")]
-        public async Task<ActionResult<RoomResponseDto>> CreateRoom([FromBody] RoomDto roomDto)
+        public async Task<ActionResult<RoomResponseDto>> CreateRoom([FromBody] RoomRegisterDto roomDto)
         {
-            var newRoom = new Room
+            if (roomDto == null)
             {
-                Type = roomDto.Type,
-                Price = roomDto.Price,
-                IsAvailable = roomDto.IsAvailable
-            };
+                return BadRequest("Room details are required.");
+            }
 
-            var createdRoom = await _roomService.CreateRoomAsync(newRoom);
+            var createdRoom = await _roomService.RegisterRoomAsync(roomDto);
             var createdRoomDto = new RoomResponseDto
             {
                 Id = createdRoom.Id,
@@ -74,8 +71,13 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut("update-room/{id}")]
-        public async Task<IActionResult> UpdateRoom(int id, [FromBody] RoomDto roomDto)
+        public async Task<IActionResult> UpdateRoom(int id, [FromBody] RoomRegisterDto roomDto)
         {
+            if (roomDto == null)
+            {
+                return BadRequest("Room details are required.");
+            }
+
             var roomToUpdate = await _roomService.GetRoomByIdAsync(id);
             if (roomToUpdate == null)
             {
@@ -101,6 +103,20 @@ namespace WebAPI.Controllers
 
             await _roomService.DeleteRoomAsync(id);
             return NoContent();
+        }
+
+        [HttpPost("search-rooms")]
+        public async Task<ActionResult<IEnumerable<RoomResponseDto>>> SearchRooms([FromBody] SearchCriteriaDto criteria)
+        {
+            var rooms = await _roomService.SearchRoomsAsync(criteria);
+            var roomDtos = rooms.Select(room => new RoomResponseDto
+            {
+                Id = room.Id,
+                Type = room.Type,
+                Price = room.Price,
+                IsAvailable = room.IsAvailable
+            });
+            return Ok(roomDtos);
         }
     }
 }

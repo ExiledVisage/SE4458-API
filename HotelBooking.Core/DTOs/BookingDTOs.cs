@@ -1,7 +1,7 @@
 using HotelBooking.Core.Models;
 namespace HotelBooking.Core.DTOs
 {
-    public class BookingCreateDto
+     public class BookingCreateDto
     {
         public int UserId { get; set; }
         public int RoomId { get; set; }
@@ -21,12 +21,13 @@ namespace HotelBooking.Core.DTOs
     public class BookingResponseDto
     {
         public int Id { get; set; }
-        public required BookingUserResponseDto User { get; set; }
-        public required BookingRoomResponseDto Room { get; set; }
+        public int UserId { get; set; }
+        public int RoomId { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        public string? UserName { get; set; }  
+        public string? RoomType { get; set; }  
     }
-
     public class BookingUserResponseDto
     {
         public int Id { get; set; }

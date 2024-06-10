@@ -9,9 +9,7 @@ C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Infrastructure\bin\Debug
 C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Infrastructure\bin\Debug\net8.0\HotelBooking.Infrastructure.dll
 C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Infrastructure\bin\Debug\net8.0\HotelBooking.Infrastructure.pdb
 C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Infrastructure\bin\Debug\net8.0\HotelBooking.Core.dll
-C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Infrastructure\bin\Debug\net8.0\HotelBooking.Messaging.dll
 C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Infrastructure\bin\Debug\net8.0\HotelBooking.Core.pdb
-C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Infrastructure\bin\Debug\net8.0\HotelBooking.Messaging.pdb
 C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Infrastructure\obj\Debug\net8.0\HotelBoo.8CD6D998.Up2Date
 C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Infrastructure\obj\Debug\net8.0\HotelBooking.Infrastructure.dll
 C:\Users\kemer\Documents\GitHub\SE4458-API\HotelBooking.Infrastructure\obj\Debug\net8.0\refint\HotelBooking.Infrastructure.dll

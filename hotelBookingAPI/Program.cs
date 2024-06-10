@@ -6,6 +6,9 @@ using Microsoft.IdentityModel.Tokens;
 using HotelBooking.Infrastructure.Data;
 using HotelBooking.Infrastructure.Services;
 using HotelBooking.Core.Interfaces;
+using HotelBooking.Infrastructure.Notifications;
+using Hangfire;
+using Hangfire.MemoryStorage;
 
 namespace WebAPI
 {
@@ -24,6 +27,9 @@ namespace WebAPI
             builder.Services.AddScoped<IRoomService, RoomService>();
             builder.Services.AddScoped<IBookingService, BookingService>();
             builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddSingleton<IQueueService, QueueService>();
+            builder.Services.AddSingleton<NotificationService>();
+            builder.Services.AddSingleton<IEmailService, EmailService>();
 
             // Add controllers
             builder.Services.AddControllers().AddJsonOptions(options =>
@@ -35,11 +41,13 @@ namespace WebAPI
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddHangfire(config => config.UseMemoryStorage());
+            builder.Services.AddHangfireServer();
 
 
             var app = builder.Build();
 
-            // Middleware configuration
+
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -51,6 +59,10 @@ namespace WebAPI
             app.UseRouting();
 
             app.MapControllers();
+            app.UseHangfireDashboard();
+
+            RecurringJob.AddOrUpdate<NotificationService>("NotifyLowCapacity", service => service.NotifyLowCapacity(), Cron.Daily);
+            RecurringJob.AddOrUpdate<NotificationService>("ProcessReservationQueue", service => service.ProcessReservationQueue(), Cron.Daily);
 
             app.Run();
         }

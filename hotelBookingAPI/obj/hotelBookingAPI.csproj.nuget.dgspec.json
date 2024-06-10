@@ -34,11 +34,7 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {
-              "C:\\Users\\kemer\\Documents\\GitHub\\SE4458-API\\HotelBooking.Messaging\\HotelBooking.Messaging.csproj": {
-                "projectPath": "C:\\Users\\kemer\\Documents\\GitHub\\SE4458-API\\HotelBooking.Messaging\\HotelBooking.Messaging.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -192,7 +188,14 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\kemer\\Documents\\GitHub\\SE4458-API\\HotelBooking.Core\\HotelBooking.Core.csproj": {
+                "projectPath": "C:\\Users\\kemer\\Documents\\GitHub\\SE4458-API\\HotelBooking.Core\\HotelBooking.Core.csproj"
+              },
+              "C:\\Users\\kemer\\Documents\\GitHub\\SE4458-API\\HotelBooking.Infrastructure\\HotelBooking.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\kemer\\Documents\\GitHub\\SE4458-API\\HotelBooking.Infrastructure\\HotelBooking.Infrastructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -209,6 +212,20 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Hangfire": {
+              "target": "Package",
+              "version": "[1.8.12, )"
+            },
+            "Hangfire.MemoryStorage": {
+              "target": "Package",
+              "version": "[1.8.1.1, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.8.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

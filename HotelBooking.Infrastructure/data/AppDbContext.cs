@@ -24,7 +24,7 @@ namespace HotelBooking.Infrastructure.Data
             modelBuilder.Entity<Booking>()
                 .HasOne(b => b.User)
                 .WithMany(u => u.Bookings)
-                .HasForeignKey(b => b.UserId);
+                .HasForeignKey(b => b.UserId);   
 
             modelBuilder.Entity<Booking>()
                 .HasOne(b => b.Room)

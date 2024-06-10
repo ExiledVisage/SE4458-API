@@ -1,3 +1,4 @@
+using HotelBooking.Core.DTOs;
 using HotelBooking.Core.Models;
 namespace HotelBooking.Core.Interfaces
 {
@@ -5,8 +6,9 @@ namespace HotelBooking.Core.Interfaces
     {
         Task<IEnumerable<Room>> GetAllRoomsAsync();
         Task<Room> GetRoomByIdAsync(int id);
-        Task<Room> CreateRoomAsync(Room room);
-        Task<Room> UpdateRoomAsync(int id, Room room);
+        Task<IEnumerable<Room>> SearchRoomsAsync(SearchCriteriaDto criteria);
+        Task<Room> RegisterRoomAsync(RoomRegisterDto roomDto);
+        Task<Room> UpdateRoomAsync(int id, Room updatedRoom);
         Task DeleteRoomAsync(int id);
     }
 }

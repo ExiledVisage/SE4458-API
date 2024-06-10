@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\HotelBooking.Messaging\HotelBooking.Messaging.csproj" />
-  </ItemGroup>
-
 </Project>

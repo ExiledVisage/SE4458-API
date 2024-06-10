@@ -1,11 +1,10 @@
-using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using HotelBooking.Core.Models;
-using HotelBooking.Infrastructure.Services;
 using HotelBooking.Core.DTOs;
 using HotelBooking.Core.Interfaces;
+using HotelBooking.Core.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
@@ -24,14 +23,16 @@ namespace WebAPI.Controllers
         public async Task<ActionResult<IEnumerable<BookingResponseDto>>> GetAllBookings()
         {
             var bookings = await _bookingService.GetAllBookingsAsync();
-            var bookingDtos = bookings.Select(b => new BookingResponseDto
+            var bookingDtos = bookings.Select(booking => new BookingResponseDto
             {
-                Id = b.Id,
-                User = new BookingUserResponseDto { Id = b.User.Id, Username = b.User.Username },
-                Room = new BookingRoomResponseDto { Id = b.Room.Id, Type = b.Room.Type, Price = b.Room.Price },
-                StartDate = b.StartDate,
-                EndDate = b.EndDate
-            }).ToList();
+                Id = booking.Id,
+                UserId = booking.UserId,
+                RoomId = booking.RoomId,
+                StartDate = booking.StartDate,
+                EndDate = booking.EndDate,
+                UserName = booking.User?.Username,  
+                RoomType = booking.Room?.Type  
+            });
             return Ok(bookingDtos);
         }
 
@@ -46,64 +47,56 @@ namespace WebAPI.Controllers
             var bookingDto = new BookingResponseDto
             {
                 Id = booking.Id,
-                User = new BookingUserResponseDto { Id = booking.User.Id, Username = booking.User.Username },
-                Room = new BookingRoomResponseDto { Id = booking.Room.Id, Type = booking.Room.Type, Price = booking.Room.Price },
+                UserId = booking.UserId,
+                RoomId = booking.RoomId,
                 StartDate = booking.StartDate,
-                EndDate = booking.EndDate
+                EndDate = booking.EndDate,
+                UserName = booking.User?.Username,  
+                RoomType = booking.Room?.Type  
             };
             return Ok(bookingDto);
         }
 
         [HttpPost("create-booking")]
-        public async Task<ActionResult<BookingResponseDto>> CreateBooking([FromBody] BookingCreateDto bookingCreateDto)
+        public async Task<ActionResult<BookingResponseDto>> CreateBooking([FromBody] BookingCreateDto bookingDto)
         {
-            var newBooking = new Booking
+            if (bookingDto == null)
             {
-                UserId = bookingCreateDto.UserId,
-                RoomId = bookingCreateDto.RoomId,
-                StartDate = bookingCreateDto.StartDate,
-                EndDate = bookingCreateDto.EndDate
-            };
+                return BadRequest("Booking details are required.");
+            }
 
-            var createdBooking = await _bookingService.CreateBookingAsync(newBooking);
-            var createdBookingDto = new BookingResponseDto
+            var booking = await _bookingService.CreateBookingAsync(bookingDto);
+            var bookingResponseDto = new BookingResponseDto
             {
-                Id = createdBooking.Id,
-                User = new BookingUserResponseDto { Id = createdBooking.User.Id, Username = createdBooking.User.Username },
-                Room = new BookingRoomResponseDto { Id = createdBooking.Room.Id, Type = createdBooking.Room.Type, Price = createdBooking.Room.Price },
-                StartDate = createdBooking.StartDate,
-                EndDate = createdBooking.EndDate
+                Id = booking.Id,
+                UserId = booking.UserId,
+                RoomId = booking.RoomId,
+                StartDate = booking.StartDate,
+                EndDate = booking.EndDate
             };
-            return CreatedAtAction(nameof(GetBookingById), new { id = createdBooking.Id }, createdBookingDto);
+            return CreatedAtAction(nameof(GetBookingById), new { id = booking.Id }, bookingResponseDto);
         }
 
         [HttpPut("update-booking/{id}")]
-        public async Task<IActionResult> UpdateBooking(int id, [FromBody] BookingDto bookingDto)
+        public async Task<IActionResult> UpdateBooking(int id, [FromBody] BookingCreateDto bookingDto)
         {
-            var bookingToUpdate = await _bookingService.GetBookingByIdAsync(id);
-            if (bookingToUpdate == null)
+            if (bookingDto == null)
+            {
+                return BadRequest("Booking details are required.");
+            }
+
+            var updatedBooking = await _bookingService.UpdateBookingAsync(id, bookingDto);
+            if (updatedBooking == null)
             {
                 return NotFound($"Booking with Id = {id} not found.");
             }
 
-            bookingToUpdate.UserId = bookingDto.UserId;
-            bookingToUpdate.RoomId = bookingDto.RoomId;
-            bookingToUpdate.StartDate = bookingDto.StartDate;
-            bookingToUpdate.EndDate = bookingDto.EndDate;
-
-            await _bookingService.UpdateBookingAsync(bookingToUpdate);
             return NoContent();
         }
 
         [HttpDelete("delete-booking/{id}")]
         public async Task<IActionResult> DeleteBooking(int id)
         {
-            var booking = await _bookingService.GetBookingByIdAsync(id);
-            if (booking == null)
-            {
-                return NotFound($"Booking with Id = {id} not found.");
-            }
-
             await _bookingService.DeleteBookingAsync(id);
             return NoContent();
         }
